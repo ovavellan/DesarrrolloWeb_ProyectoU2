@@ -30,6 +30,6 @@ namespace desarrollo_proyectoU2.Models.ViewModels
         [StringLength(50)]
         [Display(Name = "Categoría")]
         public string categoria { get; set; }
-
+        
     }
 }
