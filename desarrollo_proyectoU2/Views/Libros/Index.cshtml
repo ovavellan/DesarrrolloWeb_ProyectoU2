@@ -1,0 +1,31 @@
+﻿@model List<desarrollo_proyectoU2.Models.ViewModels.ListLibrosViewModel>
+@{
+    ViewBag.Title = "Biblioteca";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="~/Libros/Nuevo" class="btn btn-primary mt-3">Nuevo</a>
+        <table class="table">
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año Publicación</th>
+                <th>Categoría</th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.titulo</td>
+                    <td>@oElemento.autor</td>
+                    <td>@oElemento.anio_publicacion</td>
+                    <td>@oElemento.categoria</td>
+                    <td><a class="btn btn-warning" href="@Url.Action("Editar", "Libros", new { id = oElemento.id})">Editar</a></td>
+                    <td><a class="btn btn-danger" href="@Url.Action("Eliminar", "Libros", new { id = oElemento.id})">Eliminar</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
